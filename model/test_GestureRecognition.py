@@ -9,10 +9,16 @@ class TestModel(unittest.TestCase):
         self.model = GestureRecognition()
 
 
-class TestGestureRecognitonThumbUp(TestModel):
+class TestGestureRecognitonFingerUp(TestModel):
     def runTest(self):
         self.thumbUpImg = cv2.imread(r'C:\Users\siwie\Kivy\Lab2\model\fingerup.jpg')
         _, gesture = self.model.recognize_gesture_from(self.thumbUpImg, draw=False)
         self.assertEqual(gesture, Gesture.FINGER_UP)
 
+
+class TestGestureRecognitonThumbUp(TestModel):
+    def runTest(self):
+        self.thumbUpImg = cv2.imread(r'C:\Users\siwie\Kivy\Lab2\model\thumb_up.jpg')
+        _, gesture = self.model.recognize_gesture_from(self.thumbUpImg, draw=False)
+        self.assertEqual(gesture, Gesture.THUMB_UP)
 

@@ -75,7 +75,10 @@ class GestureRecognition:
         )
         classifier = Classifier()
         # load labels
-        with open(os.path.join(os.getcwd(), 'gesture_labels.csv'), encoding='utf-8-sig') as file:
+
+        # do testów, normalnie nie używac pełnej ściezki
+        # with open(os.path.join(os.getcwd(), 'gesture_labels.csv'), encoding='utf-8-sig') as file:
+        with open(r'C:\Users\siwie\Kivy\Lab2\gesture_labels.csv', encoding='utf-8-sig') as file:
             self.gesture_labels = csv.reader(file)
             self.gesture_labels = [
                 row[0] for row in self.gesture_labels

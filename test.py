@@ -1,7 +1,14 @@
-from Enums.Gesture import Gesture
-from Enums.Move import Move
+from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.label import MDLabel
 
-id = - 1
+class MainApp(MDApp):
+    def build(self):
+        return MDBoxLayout(
+            orientation='vertical',
+            MDLabel(text="Hello, World", halign="center")
 
-move = Move(id)
-print(move)
+        )
+
+
+MainApp().run()
